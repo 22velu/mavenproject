@@ -1,13 +1,14 @@
 node {
-  stage('cloning maven project')
+  stage('Git repo')
   {
-    git 'https://github.com/Sharath-yp25/mavenproject.git'
+ git 'https://github.com/22velu/mavenproject.git'   
   }
-  stage('Building maven project')
+  stage('package')
   {
-    sh 'mvn package'
+    bat 'mvn package'
   }
-  stage('print'){
-    echo "Hi, my name is Sagar kumar"
-}
+  stage('install')
+  {
+    bat 'mvn install'
+  }
 }
